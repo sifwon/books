@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>dockerの立ち上げと終了</h2>
+    <!-- まずはdockerを起動 -->
+    <!-- その後ターミナルでコマンドを入力 -->
+    <!-- dockerをバックグラウンドで実行 -->
+    <p>docker-compose up -d</p>
+    <!-- dockerを終了させる場合 -->
+    <!-- 起動しているdockerを確認するコマンド -->
+    <p>docker-compose -q</p>
+    <!-- 起動しているdockerを強制終了するコマンド -->
+    <p>docker kill 起動しているdocker名</p>
+
+    <h2>データベースに接続するまでの一連の流れ</h2>
+    <!-- パスの指定(ルートディレクトリからファイルまで) -->
+    <p>cd desktop/code1/part2</p>
+    <!-- appコンテナに移動 -->
+    <p>docker-compose exec app /bin/sh</p>
+    <!-- データベースに接続 -->
+    <p>mysql -h db -u book_log -D book_log -p</p>
+    <!-- table一覧を表示 -->
+    <p>show tables;</p>
+    <!-- reviewテーブルの中身を表示 -->
+    <p>select * from review;</p>
+    <!-- データベースのレコードの削除 -->
+    <p>delete from review where id=数字; </p>
+    <!-- テーブルの削除 -->
+    <p>drop tables review;</p>
+    <!-- タスクを終了させる -->
+    <p>exit</p>
+</body>
+</html>
